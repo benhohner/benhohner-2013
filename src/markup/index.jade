@@ -1,0 +1,175 @@
+doctype
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Ben Hohner - UX / Web Development &amp; Design
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='css/main.css')
+    link(href='http://fonts.googleapis.com/css?family=Noto+Sans|Average+Sans|Titillium+Web:200,300', rel='stylesheet', type='text/css')
+    script(src="js/main.js")
+  body
+    header
+      |<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="148px" height="226px" viewBox="0 0 74 113" version="1.1" class="logo-box">
+      |    <style>
+      |   .logo {
+      |       fill:   none;
+      |       fill-rule:  evenodd;
+      |     stroke-linejoin:  round;
+      |        stroke-linecap: round;
+      |        stroke-width:   2;
+      |    }
+      |    .logo__b {
+      |        stroke: #55ADAB;
+      |    }
+      |    .logo__h {
+      |        stroke: #49867C;
+      |    }
+      |    </style>
+      |    <title>Ben Hohner Logo</title>
+      |    <defs/>
+      |    <g transform="translate(1.000000, 1.000000)" class="logo">
+      |        <path d="M0 3 L0 57 L0 93 L36 111 L72 93 L72 57 L36 39 L16 49" class="logo__b"/>
+      |        <g class="logo__h">
+      |            <path d="M7.5 0 L7.5 53.4 L7.5 89" class="logo__h__vertical"/>
+      |            <path d="M7.8 62.2 L36.403 47.8 L64.81 62 L64.81 89" class="logo__h__curve"/>
+      |        </g>
+      |    </g>
+      |</svg>
+      div.hero-headings
+        h1.name: a(href="/") ben hohner
+        h1.job-description: a(href="#services").
+          <abbr title="User Experience Design">ux</abbr>
+          <abbr title="Web Design">design</abbr>
+          <abbr title="Web Development">dev</abbr>
+      nav.main-nav
+        ul
+          li: a(href="#services") what i do
+          li: a(href="#work") my work
+          li: a(href="#social") find me
+          li: a(href="#contact") hire me
+    div.section-container
+      section#services
+        h2 Services
+        h3 The experience of a web veteran
+        ul
+          li User Experience Design
+          li Consulting
+            ul
+              li Web Presence
+              li User Experience
+              li Social Media
+              li Branding
+              li Python
+              li Internet Culture
+          li Front End Development
+          li Python and PHP Web Development
+          li Brand Identity
+      section#work
+        h2 Work
+        h3 What I've done
+        ul
+          li
+            h4 Guide Me
+            p A guided meditation tool hacked together in 8 hours.
+          li
+            h4 Moon Criminal Law
+            p Design and front end development, skillfully reflecting client's vision.
+          li
+            h4 Aurelia Mastering Studio
+            p Minimalist rapid prototype for an audio mastering business.
+          li
+            h4 Ben Hohner Branding
+            p Complete logo design and branding for my personal brand.
+          li
+            h4 BenHohner.com
+            p Full development, needs analysis, research, personas, wireframes, design.
+          li
+            h4 Barsink
+            p Everything but the kitchen sink. Build system based on gulp.js for rapid prototyping. 
+          li
+            h4 Image Compression Infographic
+            p Helpful flowchart for creating images for the web.
+          li
+            h4 FeatherCoin
+            p Improved existing design, usability, and integrated new features.
+          li
+            h4 What's To Lose
+            p Lead planning and development of social weight loss site.
+          li Absolutely You
+      section
+        div.about#about
+          h2 About
+          h3 What makes me tick
+          p.
+            I'm a Web Developer &amp; Designer transitioning into User Experience
+            Design. I discovered my passion for making things better at a young
+            age and I'm finally making it my career.
+          p.
+            I see so many opportunities for improvement around us every day, and I want to
+            help. I see businesses unable to reach their desiring customers, only
+            because of a simple usability issue. I see everyday people missing
+            out due to convoluted interactions. In most cases these are
+            unfortunate, and add to stress. In other cases, they're downright
+            dangerous (as in the case of automotive media/navigation systems).
+            I want to make the world a better place by improving user experience everywhere.
+          p.
+            When I'm not absorbing knowledge like a sponge, I enjoy Programming, 
+            Parkour, Chess, Wing Chun Kung Fu, Photography, Travel, and Camping.
+        div.resume#resume
+          h2 Resume
+        div.social#social
+          h2 Social
+          ul
+            li: a(href="http://linkedin.com/in/benhohner", target="_blank") LinkedIn
+            li: a(href="https://twitter.com/BHohner", target="_blank") Twitter
+            li: a(href="https://github.com/benhohner", target="_blank") GitHub
+            li: a(href="mailto:benhohner@gmail.com", target="_blank") Email
+      section#contact
+          h2 Get In Contact
+          form(action="post",method="")
+            ul.contact-form__fields
+              li.contact-form__field
+                label(for="name") Hi! My name is 
+                input(id="name", name="name", type="text", maxlength="255" value="", placeholder="Your Name")
+              li.contact-form__field
+                label(for="email") and my Email is 
+                input(id="email", name="email", type="text", maxlength="255" value="", placeholder="Your Email")
+                span .
+              li.contact-form__field
+                label(for="interest") I'm interested in
+                select(id="interest", name="interest")
+                  option(value='0', selected="selected")
+                  option(value='1') User Experience Design
+                  option(value='2') Consulting
+                  option(value='3') Web Development
+                  option(value='4') Sharing a Job Opportunity
+                  option(value='5') Just Saying Hi
+                span .
+              li.contact-form__field
+                label(for="message") Here's some more info:
+                div
+                  textarea(id="message", name="message", placeholder="Details...")
+              li.contact-form__button
+                input(type="submit", name="submit", value="Send!")
+      footer
+        div.site-map
+          h2 Site map
+          ul
+            li: a(href="#") Home
+            li: a(href="#services") Services
+            li: a(href="#work") Work
+            li: a(href="#about") About
+            li: a(href="#resume") Resume
+            li: a(href="#social") Social
+            li: a(href="#contact") Contact
+        div.social
+          h2 Social
+          ul
+            li: a(href="http://linkedin.com/in/benhohner", target="_blank") LinkedIn
+            li: a(href="https://twitter.com/BHohner", target="_blank") Twitter
+            li: a(href="https://github.com/benhohner", target="_blank") GitHub
+            li: a(href="mailto:benhohner@gmail.com", target="_blank") Email
+        div.smallprint
+          p: small Crafted with love in 2014 by Ben Hohner.
