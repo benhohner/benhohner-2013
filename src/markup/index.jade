@@ -80,13 +80,13 @@ html
           h2 Work
           h3 What I've done
           .pure-g
-            .pure-u-1.pure-u-sm-1-2.pure-u-lg-1-3
+            .pure-u-1.pure-u-md-1-2.pure-u-lg-1-3
               h4 Moon Criminal Law
               p Design and front end development for law firm, skillfully reflecting client's vision.
-            .pure-u-1.pure-u-sm-1-2.pure-u-lg-1-3
+            .pure-u-1.pure-u-md-1-2.pure-u-lg-1-3
               h4 Aurelia Mastering Studio
               p Minimalist rapid prototype for an audio mastering business.
-            .pure-u-1.pure-u-sm-1.pure-u-lg-1-3
+            .pure-u-1.pure-u-md-1.pure-u-lg-1-3
               h4 Guide Me
               p A guided meditation tool prototyped in 8 hours.
           .pure-g
@@ -113,48 +113,49 @@ html
               h4 BenHohner.com
               p Full development, needs analysis, research, personas, wireframes, design.
       section#about
-        .content.pure-g
-          .about.pure-u-1.pure-u-sm-3-5
-            h2 About
-            h3 What makes me tick
-            p.
-              I'm a Web Developer &amp; Designer transitioning into User Experience
-              Design. I discovered my passion for making things better at a young
-              age and I'm finally making it my career.
-            p.
-              I see so many opportunities for improvement around us every day, and I want to
-              help. I see businesses unable to reach their desiring customers, only
-              because of a simple usability issue. I see everyday people missing
-              out due to convoluted interactions. In most cases these are
-              unfortunate, and add to stress. In other cases, they're downright
-              dangerous (as in the case of automotive media/navigation systems).
-              I want to make the world a better place by improving user experience everywhere.
-            p.
-              When I'm not absorbing knowledge like a sponge, I enjoy Programming, 
-              Parkour, Chess, Wing Chun Kung Fu, Photography, Travel, and Camping.
-          .pure-u-1.pure-u-sm-2-5
-            #resume.resume
-              h2 Resume
-            #social.social
-              h2 Social
-              ul
-                li: a(href="http://linkedin.com/in/benhohner", target="_blank") LinkedIn
-                li: a(href="https://twitter.com/BHohner", target="_blank") Twitter
-                li: a(href="https://github.com/benhohner", target="_blank") GitHub
-                li: a(href="mailto:benhohner@gmail.com", target="_blank") Email
+        .content
+          h2 About
+          h3 What makes me tick
+          .pure-g
+            .about.pure-u-1.pure-u-md-3-5
+              p.
+                I'm a Web Developer &amp; Designer transitioning into User Experience
+                Design. I discovered my passion for making things better at a young
+                age and I'm finally making it my career.
+              p.
+                I see so many opportunities for improvement around us every day, and I want to
+                help. I see businesses unable to reach their desiring customers, only
+                because of a simple usability issue. I see everyday people missing
+                out due to convoluted interactions. In most cases these are
+                unfortunate, and add to stress. In other cases, they're downright
+                dangerous (as in the case of automotive media/navigation systems).
+                I want to make the world a better place by improving user experience everywhere.
+              p.
+                When I'm not absorbing knowledge like a sponge, I enjoy Programming, 
+                Parkour, Chess, Wing Chun Kung Fu, Photography, Travel, and Camping.
+            .pure-u-1.pure-u-md-2-5
+              #resume.resume
+                h2 Resume
+              #social.social
+                h2 Social
+                ul
+                  li: a(href="http://linkedin.com/in/benhohner", target="_blank") LinkedIn
+                  li: a(href="https://twitter.com/BHohner", target="_blank") Twitter
+                  li: a(href="https://github.com/benhohner", target="_blank") GitHub
+                  li: a(href="mailto:benhohner@gmail.com", target="_blank") Email
       section#contact
        .content
           h2 Get In Contact
           form(action="post",method="")
-            ul.contact-form__fields
-              li.contact-form__field
+            .contact-form__fields
+              .contact-form__field
                 label(for="name") Hi! My name is 
                 input(id="name", name="name", type="text", maxlength="255" value="", placeholder="Your Name")
-              li.contact-form__field
+              .contact-form__field
                 label(for="email") and my Email is 
                 input(id="email", name="email", type="text", maxlength="255" value="", placeholder="Your Email")
                 span .
-              li.contact-form__field
+              .contact-form__field
                 label(for="interest") I'm interested in
                 select(id="interest", name="interest")
                   option(value='0', selected="selected")
@@ -164,30 +165,31 @@ html
                   option(value='4') Sharing a Job Opportunity
                   option(value='5') Just Saying Hi
                 span .
-              li.contact-form__field
+              .contact-form__field
                 label(for="message") Here's some more info:
                 div
                   textarea(id="message", name="message", placeholder="Details...")
-              li.contact-form__button
+              .contact-form__button
                 input(type="submit", name="submit", value="Send!")
       footer
         .content
-          .site-map
-            h2 Site map
-            ul
-              li: a(href="#") Home
-              li: a(href="#services") Services
-              li: a(href="#work") Work
-              li: a(href="#about") About
-              li: a(href="#resume") Resume
-              li: a(href="#social") Social
-              li: a(href="#contact") Contact
-          .social
-            h2 Social
-            ul
-              li: a(href="http://linkedin.com/in/benhohner", target="_blank") LinkedIn
-              li: a(href="https://twitter.com/BHohner", target="_blank") Twitter
-              li: a(href="https://github.com/benhohner", target="_blank") GitHub
-              li: a(href="mailto:benhohner@gmail.com", target="_blank") Email
+          .pure-g
+            .site-map.pure-u-1.pure-u-md-3-5
+              h2 Site map
+              ul.sitemap.pure-g
+                li.pure-u-1-2: a(href="#") Home
+                li.pure-u-1-2: a(href="#services") Services
+                li.pure-u-1-2: a(href="#work") Work
+                li.pure-u-1-2: a(href="#about") About
+                li.pure-u-1-2: a(href="#resume") Resume
+                li.pure-u-1-2: a(href="#social") Social
+                li.pure-u-1-2: a(href="#contact") Contact
+            .social.pure-u-1.pure-u-md-2-5
+              h2 Social
+              ul.social
+                li: a(href="http://linkedin.com/in/benhohner", target="_blank") LinkedIn
+                li: a(href="https://twitter.com/BHohner", target="_blank") Twitter
+                li: a(href="https://github.com/benhohner", target="_blank") GitHub
+                li: a(href="mailto:benhohner@gmail.com", target="_blank") Email
           .smallprint
             p: small Crafted with love in 2014 by Ben Hohner.
