@@ -151,30 +151,45 @@ td, th
 
 // Variables
 font-stack = "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif
+font-size-base = 16px
+line-height-base = 1.4
+
+// Extra Small Devices, Phones
+screen-sm = 35.5em
+
+// Small Devices, Tablets
+screen-md = 48em
+
+// Medium Devices, Desktops
+screen-lg = 64em
+
+// Large Devices, Wide Screens
+screen-xl = 80em
 
 
 // Global Styles
 html
- font-size: 20px
- line-height: 1.4
+ font-size: font-size-base
+ line-height: line-height-base
  -webkit-font-smoothing: antialiased
 
 body
   font-family: font-stack
   font-weight: 300
-  background: url(../img/bg.jpg) no-repeat center center fixed
-  background-size: cover
-
-body, section
-  positon: relative
+  font-size: 1.125em
+  //background: url(../img/bg.jpg) no-repeat center center fixed
+  //background-size: cover
 
 
 // Headings
 h1
   font-weight: 300
 
-h2, h3, h4, h5, h6
-  font-weight: 300
+h2, h3
+  font-weight: 400
+
+h4, h5, h6
+  font-weight: 600
 
 // Anchors
 a
@@ -194,32 +209,27 @@ abbr[title]
 ul
   padding: 0
 
-
 // Header
 header
   position: fixed
   top: 0
   right: 0
   left: 0
-  padding-top: 4em
-  display: block
+  height: 100%
   text-align: center
-  width: 1080px
-  margin: 0 auto
   z-index: -1
+
+.header__content
+  position: fixed
+  top: 10%
+  left: 0
+  right: 0
 
 header a
   color: inherit
 
 header a:hover
   text-decoration: none
-
-.name
-  font-size: 5em
-  margin: 0
-
-.job-description
-  font-size: 2em
 
 .main-nav ul
   list-style-type: none
@@ -229,7 +239,7 @@ header a:hover
 
 .main-nav a
   display: inline-block
-  padding: 20px
+  padding: 0.4em
 
 .main-nav a:hover
   text-decoration: underline
@@ -281,10 +291,51 @@ header a:hover
   100%
     stroke-dashoffset: 0
 
-
 // Sections
 .section-container
   position: absolute
-  display: block
   top: 100%
-  background-color: #e9e9e9
+  width: 100%
+
+section, footer
+  overflow: hidden
+  width: 100%
+
+.content
+  margin: 0 auto
+  max-width: screen-lg
+
+#services
+  background-color: #e0e0e0
+
+#work
+  background-color: #e8e8e8
+
+#about
+  background-color: #e3e3e3
+
+#contact
+  background-color: #e0e0e0
+
+footer
+  background-color: #383838
+
+// Contact Form
+.contact-form__field label
+  display: block
+
+// Mobile-first Media Queries
+
+/* Extra Small Devices, Phones */
+//@media only screen and (min-width : screen-sm)
+
+/* Small Devices, Tablets */
+//@media only screen and (min-width : screen-md)
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : screen-lg)
+  body
+    font-size: 1.375em
+
+/* Large Devices, Wide Screens */
+//@media only screen and (min-width : screen-xl)
