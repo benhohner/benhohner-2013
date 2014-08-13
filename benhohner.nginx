@@ -1,0 +1,16 @@
+server {
+	server_name www.benhohner.com localhost;
+	root /usr/local/www/benhohner.com/; 
+	index index.html index.htm;
+	error_page 404 /404.html;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+
+# Redirect all domains to www.benhohner.com
+server {
+	server_name benhohner.com benhohner.ca www.benhohner.ca;
+	return 301 $scheme://www.benhohner.com$request_uri;
+}
