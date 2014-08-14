@@ -159,7 +159,7 @@ gulp.task('livereload', ['serve'], function() {
  * Clean Task (Blocking)
  */
 gulp.task('clean', function() {
-  return gulp.src(path.build.root + "/**/*", { read: false })
+  return gulp.src('./build', { read: false })
     .pipe(rimraf({ force: true }));
 });
 
