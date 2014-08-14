@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
-var clean = require('gulp-clean');
+var rimraf = require('gulp-rimraf');
 var filter = require('gulp-filter');
 var size = require('gulp-size');
 
@@ -109,11 +109,9 @@ gulp.task('images', function() {
  * Misc Task
  */
 gulp.task('misc', function(){
-  var gitFilter = filter('!' + path.src.misc + '/.gitkeep');
   return gulp.src(path.src.misc)
     .pipe(watch())
     .pipe(plumber())
-    .pipe(gitFilter)
     .pipe(size({ showFiles: true }))
     .pipe(gulp.dest(path.build.root));
 });
@@ -161,10 +159,8 @@ gulp.task('livereload', ['serve'], function() {
  * Clean Task (Blocking)
  */
 gulp.task('clean', function() {
-  var gitFilter = filter('!' + path.src.misc + '/.gitkeep');
   return gulp.src(path.build.root + "/**/*", { read: false })
-    .pipe(gitFilter)
-    .pipe(clean({ force: true }));
+    .pipe(rimraf({ force: true }));
 });
 
 /**

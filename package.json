@@ -13,7 +13,7 @@
     "connect": "2.x.x",
     "gulp-concat": "2.x.x",
     "gulp-changed": "0.x.x",
-    "gulp-clean": "0.x.x",
+    "gulp-rimraf": "0.x.x",
     "gulp-ignore": "1.x.x",
     "gulp-filter": "0.x.x",
     "gulp-rename": "1.x.x",
