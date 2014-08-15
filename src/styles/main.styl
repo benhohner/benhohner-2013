@@ -51,6 +51,10 @@ screen-lg = 64em
 // Large Devices, Wide Screens
 screen-xl = 80em
 
+// Colors
+palette-white = #fafafa
+palette-black = #2a2a2a
+
 
 // Global Styles
 .pure-g // Override Pure Fonts
@@ -67,7 +71,7 @@ body
   line-height: base-line-height
   font-family: font-stack
   font-weight: 300
-  color: #2a2a2a
+  color: palette-black
   //background: url(../img/bg.jpg) no-repeat center center fixed
   //background-size: cover
 
@@ -135,7 +139,7 @@ a
   color: #30505C
 
 a:hover
-  text-decoration: underline
+  border-bottom: 1px solid palette-white
 
 a.pure-button:hover
   text-decoration: none
@@ -150,6 +154,14 @@ abbr[title]
 // Lists
 ul
   padding: 0
+
+
+// Icons
+.icon
+  display: inline-block
+  width: 10em
+  height: 10em
+  fill: palette-white
 
 
 // Header
@@ -248,7 +260,7 @@ header a:hover
   width: 100%
 
 section, footer
-  color: #fafafa
+  color: palette-white
   overflow: hidden
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3)
   padding: (base-line-height * 2) 0
@@ -266,7 +278,7 @@ section, footer
 
 #about
   background-color: #EFC94C
-  color: #333
+  color: palette-black
 
 #contact
   background-color: #E27A3F
@@ -278,6 +290,9 @@ footer
 // Services
 .service
   text-align: center
+
+.service ul
+  list-style-type: none
 
 
 // Work
@@ -353,13 +368,13 @@ footer
 .contact-form input[type=text], .contact-form select, .contact-form textarea
   background: transparent
   border: 0
-  border-bottom: 1px dotted #fafafa
+  border-bottom: 1px dotted palette-white
 
 .contact-form input[type=text], .contact-form select
   margin-left: .5em
 
 .contact-form textarea
-  background-image: linear-gradient(0deg, transparent 96%, #fafafa 100%, transparent)
+  background-image: linear-gradient(0deg, transparent 96%, palette-white 100%, transparent)
   background-position: 0 1.4em
   background-size: 1px base-line-height
 
@@ -370,6 +385,14 @@ footer ul
 
 footer li
   display: inline-block
+
+footer a
+  font-size: h4-font-size
+  line-height: h4-line-height
+  margin-top: h4-margin-top
+  margin-bottom: h4-margin-bottom
+  font-weight: 600
+  border-bottom: 1px solid palette-white
 
 .display-lg
   display: none
