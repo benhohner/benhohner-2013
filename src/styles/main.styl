@@ -53,19 +53,20 @@ screen-xl = 80em
 
 // Colors
 palette-white = #fafafa
-palette-black = #2a2a2a
+palette-black = #222
 
 
 // Global Styles
-.pure-g // Override Pure Fonts
-  font-family: inherit
-
-.pure-g [class*="pure-u"] // Override Pure Fonts
-  font-family: inherit
+button,
+input,
+select,
+textarea,
+.pure-g,
+.pure-g [class*="pure-u"]
+  font-family: inherit // Override Pure Fonts
 
 html
  font-size: base-font-size
- -webkit-font-smoothing: antialiased
 
 body
   line-height: base-line-height
@@ -78,10 +79,10 @@ body
 
 // Headings
 h1
-  font-size: h1-font-size
-  line-height: h1-line-height
-  margin-top: h1-margin-top
-  margin-bottom: h1-margin-bottom
+  font-size: h2-font-size
+  line-height: h2-line-height
+  margin-top: h2-margin-top
+  margin-bottom: h2-margin-bottom
   font-weight: 300
 
 h2
@@ -136,7 +137,7 @@ sub
 // Anchors
 a
   text-decoration: none
-  color: #30505C
+  color: inherit
 
 a:hover
   border-bottom: 1px solid palette-white
@@ -153,19 +154,20 @@ abbr[title]
 
 // Lists
 ul
+  list-style-type: none
   padding: 0
 
 
 // Icons
 .icon
   display: inline-block
-  width: 4em
-  height: 4em
-  fill: palette-white
+  width: base-line-height * 3
+  height: base-line-height * 3
+  fill: darken(palette-black, 10%)
 
 
 // Header
-header
+.site-header
   position: fixed
   top: 0
   right: 0
@@ -174,9 +176,9 @@ header
   text-align: center
   z-index: -1
 
-.header__content
+.site-header__content
   position: fixed
-  top: 10%
+  top: 5%
   left: 0
   right: 0
 
@@ -186,24 +188,38 @@ header
   margin-top: h2-margin-top
   margin-bottom: h2-margin-bottom
 
-header a
-  color: inherit
+.job-description__item
+  margin: 0 0.1em
 
-header a:hover
-  text-decoration: none
-
-.main-nav ul
-  list-style-type: none
-
-.main-nav li
+.main-nav__item
   display: inline-block
 
-.main-nav a
+.main-nav__item__link
+  position: relative
   display: inline-block
-  padding: 0.4em
+  padding: 0.33333em 0.5em
 
-.main-nav a:hover
-  text-decoration: underline
+.main-nav__item__link:hover
+  border-bottom: 0
+
+.main-nav__item__link::after
+  content: ''
+  position: absolute
+  left: 100%
+  bottom: 0
+  width: 100%
+  height: 1px
+  background: palette-black
+  opacity: 0
+  //transform: translateY(5px)
+  transition: transform 0.3s, opacity 0.3s, left 0.3s
+  pointer-events: none
+
+.main-nav__item__link:hover::after,
+.main-nav__item__link:focus::after
+  opacity: 1
+  left: 0
+  //transform: translateY(0px)
 
 
 // Logo Animation
@@ -260,31 +276,66 @@ header a:hover
   width: 100%
 
 section, footer
+  position: relative
   color: palette-white
   overflow: hidden
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3)
+  //box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3)
   padding: (base-line-height * 2) 0
+
+section:before, footer:before
+  position: absolute
+  border-top: base-line-height solid #FFF
+  border-left: base-line-height solid transparent
+  border-right: base-line-height solid transparent
+  width: 0
+  z-index: 2
+  top: 0
+  content: ""
+  margin: 0 auto
+  left: 0
+  right: 0
 
 .content
   margin: 0 auto
   padding: 0
   max-width: screen-lg
 
+fancy-gradient(c)
+  linear-gradient(darken(c, 15%), c 40%)
+
 #services
   background-color: #45B29D
+  background-image: fancy-gradient(#45B29D)
+  color: palette-black
+
+#work:before
+  border-top: base-line-height solid #45B29D
 
 #work
   background-color: #30505C
+  background-image: fancy-gradient(#30505C)
+
+#about:before
+  border-top: base-line-height solid #30505C
 
 #about
   background-color: #EFC94C
+  background-image: fancy-gradient(#EFC94C)
   color: palette-black
+
+#contact:before
+  border-top: base-line-height solid #EFC94C
 
 #contact
   background-color: #E27A3F
+  background-image: fancy-gradient(#E27A3F)
 
-footer
+.site-footer:before
+  border-top: base-line-height solid #E27A3F
+
+.site-footer
   background-color: #DF4949
+  background-image: fancy-gradient(#DF4949)
 
 
 // Services
@@ -293,11 +344,9 @@ footer
 
 .service h4
   margin-top: 0
-  margin-bottom: 0
 
 .service ul
   margin-top: 0
-  list-style-type: none
 
 .service .icon
   margin-top: base-line-height
@@ -363,35 +412,78 @@ footer
 .about p
   margin-right: base-line-height
 
-
-// Social
-.social ul
-  list-style-type: none
+#about .social__item__link:hover
+  border-bottom: 1px solid palette-black
 
 
 // Contact Form
-.contact-form__field label
+.contact-form
+  display: block
+  padding: base-line-height
+  max-width: 23em
+  background-color: #45B29D
+  margin: auto
+  font-weight: 400
+
+.contact-form__field label,
+.contact-form__field input,
+.contact-form__field select,
+.contact-form__field--textarea label
+  margin-bottom: (base-line-height / 4)
+
+.contact-form__field label,
+.contact-form__field--textarea label
+.contact-form__field textarea
   display: block
 
 .contact-form input[type=text], .contact-form select, .contact-form textarea
   background: transparent
   border: 0
   border-bottom: 1px dotted palette-white
+  color: palette-white
+  line-height: base-line-height
+  width: 100%
+
+/* WebKit browsers */
+::-webkit-input-placeholder 
+    color: darken(palette-white, 10%)
+
+/* Mozilla Firefox 4 to 18 */
+:-moz-placeholder
+    color: darken(palette-white, 10%)
+    opacity: 0.8
+
+/* Mozilla Firefox 19+ */
+::-moz-placeholder 
+    color: darken(palette-white, 10%)
+    opacity: 0.8
+
+/* Internet Explorer 10+ */
+:-ms-input-placeholder 
+    color: palette-white
 
 .contact-form input[type=text], .contact-form select
-  margin-left: .5em
+  margin-left: 0
 
 .contact-form textarea
-  background-image: linear-gradient(0deg, transparent 96%, palette-white 100%, transparent)
+  border-bottom: 0
+  background-image: linear-gradient(0deg, transparent 94%, palette-white 100%)
   background-position: 0 1.4em
   background-size: 1px base-line-height
+  width: 100%
+
+.contact-form__buttons
+  margin-top: base-line-height
+
+.contact-form__button
+  width: 100%
+  height: base-line-height * 2
+  line-height: base-line-height
+  background-color: lighten(#45B29D, 55%)
 
 
 // Footer
-footer ul
-  list-style-type: none
-
-footer li
+.sitemap li
   display: inline-block
 
 footer a
@@ -409,12 +501,32 @@ footer a
 // Mobile-first Media Queries
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : screen-sm)
-  .contact-form__field label
-    display: inline-block
-
   section, footer
     padding-left: (base-line-height / 2)
     padding-right: (base-line-height / 2)
+
+  h1
+    font-size: h1-font-size
+    line-height: h1-line-height
+    margin-top: h1-margin-top
+    margin-bottom: h1-margin-bottom
+
+  .site-header__content
+    top: 10%
+
+  .contact-form__field label
+    float: left
+    margin-right: (base-line-height / 4)
+
+  .contact-form__field--textarea
+    clear: left
+
+  .full-inline-width
+    overflow: hidden
+    display: block
+
+  .full-inline-width input
+    width: 100%
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : screen-md)
