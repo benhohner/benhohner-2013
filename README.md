@@ -1,6 +1,6 @@
 #Benhohner.ca
 
-The source for benhohner.ca.
+The source for benhohner.com.
 Created with the [Barsink](https://github.com/benhohner/barsink) streaming build system.
 
 ## Setup
