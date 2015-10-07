@@ -145,6 +145,8 @@ a:hover
 a.pure-button:hover
   border-bottom: 0
 
+p a, li>a
+  border-bottom: 1px dotted palette-white
 
 // Abbreviations
 abbr[title]
@@ -308,6 +310,9 @@ fancy-gradient(c)
   background-image: fancy-gradient(#45B29D)
   color: palette-black
 
+#services p a, #services li>a
+  border-bottom: 1px dotted palette-black
+
 #work:before
   border-top: base-line-height solid #45B29D
 
@@ -323,6 +328,9 @@ fancy-gradient(c)
   background-image: fancy-gradient(#EFC94C)
   color: palette-black
 
+#about p a, #about li>a
+  border-bottom: 1px dotted palette-black
+
 #contact:before
   border-top: base-line-height solid #EFC94C
 
@@ -337,6 +345,11 @@ fancy-gradient(c)
   background-color: #DF4949
   background-image: fancy-gradient(#DF4949)
 
+.site-footer li>a
+  border-bottom: none
+
+.site-footer li>a:hover
+  border-bottom: 1px solid palette-white
 
 // Services
 .service
@@ -353,59 +366,13 @@ fancy-gradient(c)
 
 
 // Work
-.project
-  position: relative
-  background: #30505C
-
-.project:after
-  content: " "
-  width: 100%
-  height: 100%
-  position: absolute
-  top: 0
-  left: 0
-
-.project:hover:after
-  background-color: transparent
-
-.project:hover .project__image
-  opacity: 1
-  top: 0 - (2 * base-line-height)
-  transition: top .35s
-
-.project:hover .project__description__text
-  display: block
-
-.project:hover .project__description
-  background-color: #45B29D
-  z-index: 2
-
-.project .pure-img
-  width: 100%
-
-.project__image
-  position: relative
-  opacity: 0.7
-  top: 0
-  transition: opacity 0.35s, top .35s
-
 .project__description
-  position: absolute
-  bottom: 0
-  padding: base-line-height
-
-.project__description__text
-  display: none
-  position: relative
-  z-index: 1
+  padding: 0 base-line-height (base-line-height * 2) base-line-height
 
 .project__description__title
   font-size: h3-font-size
   line-height: h3-line-height
-  margin-top: h3-margin-top
   margin-bottom: h3-margin-bottom
-  position: relative
-  z-index: 1
 
 
 // About
